@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.co.planaria.sample.bean.Brand;
 import jp.co.planaria.sample.bean.Motocycle;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Controller
+@Slf4j
 public class MotosController {
 
     @RequestMapping("/hello")
@@ -39,6 +41,9 @@ public class MotosController {
 
         model.addAttribute("brands", brands);
         model.addAttribute("motos", motos);
+        
+        
+        log.debug("motos: {}", motos);//ログ出力する
 
         return "moto_list";
     }
