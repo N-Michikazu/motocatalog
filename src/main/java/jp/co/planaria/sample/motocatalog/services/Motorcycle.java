@@ -3,9 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package jp.co.planaria.sample.motocatalog.services;
+// package jp.co.planaria.sample.motocatalog.services;
 
 
-class Motorcycle {
+// class Motorcycle {
 
-}
+// }

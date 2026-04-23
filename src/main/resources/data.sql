@@ -1,4 +1,4 @@
-INSERT INTO m_motocycle (moto_no, moto_name, seat_height, cylinder, cooling, price, comment, brand_id, version, ins_dt) VALUES
+INSERT INTO m_motorcycle (moto_no, moto_name, seat_height, cylinder, cooling, price, comment, brand_id, version, ins_dt) VALUES
 (1, 'YZF-R1', 850, 4, '水冷', 1500000, 'Yamahaの代表的なスポーツバイク', 1, 1, NOW()),
 (2, 'CBR1000RR', 820, 4, '水冷', 1400000, 'Hondaの高性能スポーツバイク', 2, 1, NOW()),
 (3, 'GSX-R1000', 810, 4, '水冷', 1300000, 'Suzukiの高出力バイク', 3, 1, NOW()),

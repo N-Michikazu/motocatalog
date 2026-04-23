@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS m_motocycle;
-CREATE TABLE m_motocycle (
+DROP TABLE IF EXISTS m_motorcycle;
+CREATE TABLE m_motorcycle (
     moto_no INT NOT NULL PRIMARY KEY COMMENT 'バイク番号',
     moto_name VARCHAR(100) COMMENT 'バイク名',
     seat_height INT COMMENT 'シート高',

@@ -6,7 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 
 import jp.co.planaria.sample.motocatalog.beans.Motorcycle;
 
-
 @Mapper
 public interface MotorcycleMapper {
     

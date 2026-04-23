@@ -3,25 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="jp.co.planaria.sample.motocatalog.mappers.MotorcycleMapper">
-  <resultMap id="motorcycleMap" type="jp.co.planaria.sample.motocatalog.beans.Motorcycle">
-    <association property="brand" javaType="jp.co.planaria.sample.motocatalog.beans.Brand" autoMapping="true">
+  <resultMap id="motorcycleResultMap" type="jp.co.planaria.sample.motocatalog.beans.Motorcycle">
+    <id property="motoNo" column="moto_no"/>
+    <result property="motoName" column="moto_name"/>
+    <result property="seatHeight" column="seat_height"/>
+    <result property="cylinder" column="cylinder"/>
+    <result property="cooling" column="cooling"/>
+    <result property="price" column="price"/>
+    <result property="comment" column="comment"/>
+    <association property="brand" javaType="jp.co.planaria.sample.motocatalog.beans.Brand">
+      <result property="brandId" column="brand_id"/>
+      <result property="brandName" column="brand_name"/>
     </association>
   </resultMap>
-  <select id="selectAll" resultMap="motorcycleMap">
+  <select id="selectAll" resultMap="motorcycleResultMap">
   SELECT
-      m_motocycle.moto_no
-      , m_motocycle.moto_name
-      , m_motocycle.brand_id
-      , m_motocycle.cylinder
-      , m_motocycle.cooling
-      , m_motocycle.price
-      , m_motocycle.comment
+      m_motorcycle.moto_no
+      , m_motorcycle.moto_name
+      , m_motorcycle.seat_height
+      , m_motorcycle.brand_id
+      , m_motorcycle.cylinder
+      , m_motorcycle.cooling
+      , m_motorcycle.price
+      , m_motorcycle.comment
       , m_brand.brand_name 
   FROM
-      m_motocycle 
+      m_motorcycle 
       LEFT OUTER JOIN m_brand 
-          ON m_motocycle.brand_id = m_brand.brand_id 
+          ON m_motorcycle.brand_id = m_brand.brand_id 
   ORDER BY
-      moto_no
+      m_motorcycle.moto_no
   </select>
 </mapper>
