@@ -1,4 +1,4 @@
-package jp.co.planaria.sample.bean;
+package jp.co.planaria.sample.motocatalog.beans;
 
 import java.time.LocalDateTime;
 
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Motocycle {
+public class Motorcycle {
     private int motoNo;
     private String motoName;
     private int  seatHeight;

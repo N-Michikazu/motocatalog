@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   db:
-    image: mysql
+    image: mysql:latest
     restart: always
     environment:
         MYSQL_ROOT_PASSWORD: example #ルートユーザーのパスワード
@@ -16,4 +16,4 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8080:8080
+      - 9001:8080
