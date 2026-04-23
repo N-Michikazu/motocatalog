@@ -16,7 +16,7 @@
       <result property="brandName" column="brand_name"/>
     </association>
   </resultMap>
-  <select id="selectAll" resultMap="motorcycleResultMap">
+  <select id="selectByCondition" resultMap="motorcycleResultMap">
   SELECT
       m_motorcycle.moto_no
       , m_motorcycle.moto_name

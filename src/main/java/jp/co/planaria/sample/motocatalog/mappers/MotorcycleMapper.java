@@ -11,7 +11,8 @@ public interface MotorcycleMapper {
     
     /**
      * バイク情報を全件検索
+     * @param condition
      * @return　バイク情報リスト
      */
-    public List<Motorcycle> selectAll();
+    public List<Motorcycle> selectByCondition(SearchCondition condition);
 }
