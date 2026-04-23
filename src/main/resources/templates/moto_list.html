@@ -67,7 +67,7 @@
           </thead>
           <tbody>
             <tr th:each="moto : ${motos}">
-              <th scope="row" th:text="${moto.motoNo}"></th>
+              <td th:text="${moto.motoNo}"></td>
               <td th:text="${moto.brand.brandName}"></td>
               <td th:text="${moto.motoName}"></td>
               <td th:text="${moto.cooling} + ${moto.cylinder}"></td>

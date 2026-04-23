@@ -1,4 +1,4 @@
-package jp.co.planaria.sample.bean;
+package jp.co.planaria.sample.motocatalog.beans;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
