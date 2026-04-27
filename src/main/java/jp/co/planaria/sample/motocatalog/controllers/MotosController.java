@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.co.planaria.sample.motocatalog.beans.Brand;
 import jp.co.planaria.sample.motocatalog.beans.Motorcycle;
+import jp.co.planaria.sample.motocatalog.beans.SearchCondition;
 import jp.co.planaria.sample.motocatalog.services.MotosService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -33,19 +34,16 @@ public class MotosController {
     public String motos(Model model) {
         //ブランド
         List<Brand> brands = new ArrayList<>();
-        
-        brands.add(new Brand("01", "Honda"));
-        brands.add(new Brand("02", "Kawasaki"));
-        brands.add(new Brand("03", "YAMAHA"));
-        brands.add(new Brand("04", "SUZUKI")); 
+        brands = service.getBrands();
 
         List<Motorcycle> motorcycles = new ArrayList<>();
-        motorcycles = service.getMotos();
+        SearchCondition conditon = new SearchCondition();
+        motorcycles = service.getMotos(conditon);
 
         model.addAttribute("brands", brands);
         model.addAttribute("motos", motorcycles);
 
-        log.info("motorcycles: {}", motorcycles);
+        log.debug("motos: {}", motorcycles);
 
         return "moto_list";
     }
