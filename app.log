@@ -4064,3 +4064,34 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2026-04-27T15:56:15.372+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
 2026-04-27T15:56:15.375+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Started MotocatalogApplication in 1.239 seconds (process running for 1003.037)
 2026-04-27T15:56:15.377+09:00  INFO 10152 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-27T16:16:48.066+09:00  INFO 24628 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Starting MotocatalogApplication using Java 26 with PID 24628 (C:\Work\motocatalog\build\classes\java\main started by Voice034 in C:\Work\motocatalog)
+2026-04-27T16:16:48.074+09:00  INFO 24628 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-27T16:16:48.217+09:00  INFO 24628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-27T16:16:48.219+09:00  INFO 24628 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-27T16:16:51.312+09:00  INFO 24628 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-27T16:16:51.347+09:00  INFO 24628 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-27T16:16:51.349+09:00  INFO 24628 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-27T16:16:51.422+09:00  INFO 24628 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3202 ms
+2026-04-27T16:16:51.686+09:00  INFO 24628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-27T16:16:52.664+09:00  INFO 24628 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54182325
+2026-04-27T16:16:52.670+09:00  INFO 24628 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-27T16:16:55.330+09:00  INFO 24628 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-27T16:16:55.423+09:00  INFO 24628 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Started MotocatalogApplication in 8.393 seconds (process running for 9.9)
+2026-04-27T16:16:57.650+09:00  INFO 24628 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-27T16:16:57.651+09:00  INFO 24628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-27T16:16:57.654+09:00  INFO 24628 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-27T16:16:57.756+09:00  INFO 24628 --- [http-nio-8080-exec-1] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=, keyword=)
+2026-04-27T16:17:00.144+09:00  INFO 24628 --- [http-nio-8080-exec-2] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=, keyword=)
+2026-04-27T16:17:10.555+09:00  INFO 24628 --- [http-nio-8080-exec-3] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=01, keyword=)
+2026-04-27T16:17:12.710+09:00  INFO 24628 --- [http-nio-8080-exec-6] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=02, keyword=)
+2026-04-27T16:17:14.599+09:00  INFO 24628 --- [http-nio-8080-exec-5] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=, keyword=)
+2026-04-27T16:17:14.808+09:00  INFO 24628 --- [http-nio-8080-exec-8] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=, keyword=)
+2026-04-27T16:17:15.948+09:00  INFO 24628 --- [http-nio-8080-exec-7] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=, keyword=)
+2026-04-27T16:17:29.550+09:00  INFO 24628 --- [http-nio-8080-exec-4] j.c.p.s.m.controllers.MotosController    : SearchForm: SearchForm(brandId=, keyword=)
+2026-04-27T16:23:39.689+09:00  INFO 24628 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-04-27T16:23:39.942+09:00  INFO 24628 --- [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-27T16:23:40.058+09:00  INFO 24628 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-27T16:23:40.181+09:00  INFO 24628 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-27T16:23:40.289+09:00  INFO 24628 --- [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-27T16:23:41.009+09:00  INFO 24628 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Starting MotocatalogApplication using Java 26 with PID 24628 (C:\Work\motocatalog\build\classes\java\main started by Voice034 in C:\Work\motocatalog)
+2026-04-27T16:23:41.011+09:00  INFO 24628 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : No active profile set, falling back to 1 default profile: "default"
