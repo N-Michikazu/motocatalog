@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jp.co.planaria.sample.motocatalog.beans.Brand;
 import jp.co.planaria.sample.motocatalog.beans.Motorcycle;
-import jp.co.planaria.sample.motocatalog.beans.SearchCondition;
+import jp.co.planaria.sample.motocatalog.beans.SearchForm;
 import jp.co.planaria.sample.motocatalog.services.MotosService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -30,15 +30,25 @@ public class MotosController {
         return "test";
     }
 
+    /**
+     * 
+     * 
+     * @param searchForm 検索条件
+     * @param model
+     * @return
+     */
+
+
     @GetMapping("/motos")
-    public String motos(Model model) {
+    public String motos(SearchForm searchForm, Model model) {
+
+
         //ブランド
         List<Brand> brands = new ArrayList<>();
         brands = service.getBrands();
 
         List<Motorcycle> motorcycles = new ArrayList<>();
-        SearchCondition conditon = new SearchCondition();
-        motorcycles = service.getMotos(conditon);
+        motorcycles = service.getMotos(searchForm);
 
         model.addAttribute("brands", brands);
         model.addAttribute("motos", motorcycles);
@@ -47,6 +57,33 @@ public class MotosController {
 
         return "moto_list";
     }
+
+
+    /**
+     * 検索条件をクリアする
+     * @param searchForm　検索条件
+     * @param model モデル
+     * @return  
+     */
+    @GetMapping("/motos/reset")
+    public String reset(SearchForm searchForm, Model model){
+
+        this.setBrands(model);
+
+
+        searchForm = new SearchForm();
+        return "moto_list";
+    }
+
+    /**
+     * ブランドリストをモデルにセットする
+     * @param model
+     */
+
+    private void setBrands(Model model) {
+        List<Brand> brands = new ArrayList<>();
+        brands = service.getBrands();
+        model.addAttribute("brands", brands);
 }
 
 
@@ -57,3 +94,5 @@ public class MotosController {
         // brands.add(new Brand("02", "Kawasaki"));
         // brands.add(new Brand("03", "YAMAHA"));
         // brands.add(new Brand("04", "SUZUKI"));  
+
+}
