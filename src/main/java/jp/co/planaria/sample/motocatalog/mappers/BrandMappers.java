@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 import jp.co.planaria.sample.motocatalog.beans.Brand;
 
 @Mapper
-public class BrandMappers {
+public interface BrandMappers {
     public List<Brand> selectAll();
 }

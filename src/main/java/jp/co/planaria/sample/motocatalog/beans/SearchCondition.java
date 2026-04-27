@@ -3,9 +3,9 @@ package jp.co.planaria.sample.motocatalog.beans;
 import lombok.Data;
 
 @Data
-public class SearchConditon {
+public class SearchCondition {
     
 
-private String brandID;
+private String brandId;
 private String keyword;
 }

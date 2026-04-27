@@ -11,27 +11,63 @@
     <result property="cooling" column="cooling"/>
     <result property="price" column="price"/>
     <result property="comment" column="comment"/>
+    <result property="version" column="version"/>
+    <result property="insDt" column="ins_dt"/>
+    <result property="updDt" column="upd_dt"/>
     <association property="brand" javaType="jp.co.planaria.sample.motocatalog.beans.Brand">
-      <result property="brandId" column="brand_id"/>
+      <id property="brandId" column="brand_id"/>
       <result property="brandName" column="brand_name"/>
     </association>
   </resultMap>
+
   <select id="selectByCondition" resultMap="motorcycleResultMap">
-  SELECT
-      m_motorcycle.moto_no
-      , m_motorcycle.moto_name
-      , m_motorcycle.seat_height
-      , m_motorcycle.brand_id
-      , m_motorcycle.cylinder
-      , m_motorcycle.cooling
-      , m_motorcycle.price
-      , m_motorcycle.comment
-      , m_brand.brand_name 
-  FROM
-      m_motorcycle 
-      LEFT OUTER JOIN m_brand 
-          ON m_motorcycle.brand_id = m_brand.brand_id 
-  ORDER BY
-      m_motorcycle.moto_no
+    SELECT
+      m_motorcycle.moto_no,
+      m_motorcycle.moto_name,
+      m_motorcycle.seat_height,
+      m_motorcycle.cylinder,
+      m_motorcycle.cooling,
+      m_motorcycle.price,
+      m_motorcycle.comment,
+      m_motorcycle.brand_id,
+      m_brand.brand_name
+    FROM
+      m_motorcycle
+      LEFT OUTER JOIN m_brand
+        ON m_motorcycle.brand_id = m_brand.brand_id
+    <where>
+      <if test="brandId != null">
+        m_motorcycle.brand_id = #{brandId}
+      </if>
+      <if test="keyword != null">
+        AND m_motorcycle.moto_name LIKE CONCAT('%', #{keyword}, '%')
+      </if>
+    </where>
+    ORDER BY
+      moto_no;
+  </select>
+
+  <select id="selectByPK" resultMap="motorcycleResultMap">
+    SELECT
+      m_motorcycle.moto_no,
+      m_motorcycle.moto_name,
+      m_motorcycle.seat_height,
+      m_motorcycle.cylinder,
+      m_motorcycle.cooling,
+      m_motorcycle.price,
+      m_motorcycle.comment,
+      m_motorcycle.brand_id,
+      m_motorcycle.version,
+      m_motorcycle.ins_dt,
+      m_motorcycle.upd_dt,
+      m_brand.brand_name
+    FROM
+      m_motorcycle
+      LEFT OUTER JOIN m_brand
+        ON m_motorcycle.brand_id = m_brand.brand_id
+    WHERE
+      m_motorcycle.moto_no = #{motoNo}
+    ORDER BY
+      moto_no;
   </select>
 </mapper>
