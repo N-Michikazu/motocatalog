@@ -4013,3 +4013,54 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2026-04-27T15:52:05.761+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
 2026-04-27T15:52:05.767+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Started MotocatalogApplication in 1.197 seconds (process running for 753.429)
 2026-04-27T15:52:05.770+09:00  INFO 10152 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-27T15:54:20.436+09:00  INFO 10152 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-04-27T15:54:20.600+09:00  INFO 10152 --- [Thread-73] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-27T15:54:20.664+09:00  INFO 10152 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-27T15:54:20.741+09:00  INFO 10152 --- [Thread-73] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2026-04-27T15:54:20.785+09:00  INFO 10152 --- [Thread-73] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+2026-04-27T15:54:21.630+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Starting MotocatalogApplication using Java 26 with PID 10152 (C:\Work\motocatalog\build\classes\java\main started by Voice034 in C:\Work\motocatalog)
+2026-04-27T15:54:21.631+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-27T15:54:22.590+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-27T15:54:22.595+09:00  INFO 10152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-27T15:54:22.596+09:00  INFO 10152 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-27T15:54:22.702+09:00  INFO 10152 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1064 ms
+2026-04-27T15:54:22.779+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2026-04-27T15:54:23.004+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-20 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70b7d4f8
+2026-04-27T15:54:23.005+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2026-04-27T15:54:24.264+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-27T15:54:24.271+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Started MotocatalogApplication in 2.87 seconds (process running for 891.934)
+2026-04-27T15:54:24.274+09:00  INFO 10152 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-27T15:54:25.646+09:00  INFO 10152 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2026-04-27T15:54:25.649+09:00  INFO 10152 --- [Thread-77] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-27T15:54:25.655+09:00  INFO 10152 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-27T15:54:25.660+09:00  INFO 10152 --- [Thread-77] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2026-04-27T15:54:25.675+09:00  INFO 10152 --- [Thread-77] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+2026-04-27T15:54:25.757+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Starting MotocatalogApplication using Java 26 with PID 10152 (C:\Work\motocatalog\build\classes\java\main started by Voice034 in C:\Work\motocatalog)
+2026-04-27T15:54:25.758+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-27T15:54:25.921+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-27T15:54:25.922+09:00  INFO 10152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-27T15:54:25.922+09:00  INFO 10152 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-27T15:54:25.948+09:00  INFO 10152 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 185 ms
+2026-04-27T15:54:25.968+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Starting...
+2026-04-27T15:54:26.016+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-21 - Added connection com.mysql.cj.jdbc.ConnectionImpl@28fb8ea0
+2026-04-27T15:54:26.017+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Start completed.
+2026-04-27T15:54:26.435+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-27T15:54:26.439+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Started MotocatalogApplication in 0.701 seconds (process running for 894.101)
+2026-04-27T15:54:26.440+09:00  INFO 10152 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-27T15:56:13.690+09:00  INFO 10152 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2026-04-27T15:56:13.720+09:00  INFO 10152 --- [Thread-81] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-27T15:56:13.749+09:00  INFO 10152 --- [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-27T15:56:13.760+09:00  INFO 10152 --- [Thread-81] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown initiated...
+2026-04-27T15:56:13.775+09:00  INFO 10152 --- [Thread-81] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown completed.
+2026-04-27T15:56:14.246+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Starting MotocatalogApplication using Java 26 with PID 10152 (C:\Work\motocatalog\build\classes\java\main started by Voice034 in C:\Work\motocatalog)
+2026-04-27T15:56:14.246+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-27T15:56:14.540+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-27T15:56:14.543+09:00  INFO 10152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-27T15:56:14.543+09:00  INFO 10152 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.20]
+2026-04-27T15:56:14.564+09:00  INFO 10152 --- [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 315 ms
+2026-04-27T15:56:14.595+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Starting...
+2026-04-27T15:56:14.735+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-22 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18017931
+2026-04-27T15:56:14.736+09:00  INFO 10152 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Start completed.
+2026-04-27T15:56:15.372+09:00  INFO 10152 --- [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-27T15:56:15.375+09:00  INFO 10152 --- [restartedMain] j.c.p.s.m.MotocatalogApplication         : Started MotocatalogApplication in 1.239 seconds (process running for 1003.037)
+2026-04-27T15:56:15.377+09:00  INFO 10152 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
