@@ -41,16 +41,13 @@ public class MotosController {
 
     @GetMapping("/motos")
     public String motos(SearchForm searchForm, Model model) {
+        log.info("SearchForm: {}", searchForm);
 
-
-        //ブランド
-        List<Brand> brands = new ArrayList<>();
-        brands = service.getBrands();
+        this.setBrands(model);
 
         List<Motorcycle> motorcycles = new ArrayList<>();
         motorcycles = service.getMotos(searchForm);
 
-        model.addAttribute("brands", brands);
         model.addAttribute("motos", motorcycles);
 
         log.debug("motos: {}", motorcycles);
