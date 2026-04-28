@@ -1,4 +1,5 @@
 package jp.co.planaria.sample.motocatalog.controllers;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,6 +57,8 @@ public class MotosController {
         motorcycles = service.getMotos(searchForm);
 
         model.addAttribute("motos", motorcycles);
+        model.addAttribute("datetime", LocalDateTime.now());
+
 
         log.debug("motos: {}", motorcycles);
 

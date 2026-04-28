@@ -34,7 +34,6 @@ public class MotosService {
     }
 
     public int save(Motorcycle motorcycle) {
-        // TODO Auto-generated method stub
         return motorcycleMapper.update(motorcycle);
     }
 }
