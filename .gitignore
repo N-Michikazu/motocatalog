@@ -41,4 +41,4 @@ out/
 *.log
 *.gz
 *.log.*
-app.logs
+app.log
