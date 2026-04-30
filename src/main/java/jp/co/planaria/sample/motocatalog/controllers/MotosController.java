@@ -4,18 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import jakarta.annotation.Generated;
 import jp.co.planaria.sample.motocatalog.beans.Brand;
 import jp.co.planaria.sample.motocatalog.beans.Motorcycle;
 import jp.co.planaria.sample.motocatalog.beans.SearchForm;
+import jp.co.planaria.sample.motocatalog.forms.MotoForm;
 import jp.co.planaria.sample.motocatalog.services.MotosService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -82,14 +86,50 @@ public class MotosController {
         searchForm = new SearchForm();
         return "moto_list";
     }
+
+
+
+/**
+ * @param motoNo バイク番号
+ * @param motoForm バイク情報の入力内容
+ * @param model
+ * @return
+ * 
+ * 
+ */
     @GetMapping("/motos/{motoNo}")
-    public String initUpdate(Model model){
+    public String initUpdate(@PathVariable("motoNo") Integer motoNo, @ModelAttribute MotoForm motoForm, Model model){
            //ブランドリストを準備
         this.setBrands(model);
+
+        //バイク番号を条件にバイク情報を取得
+        Motorcycle motorcycle = service.getMotos(motoNo);
+        //検索結果を入力内容に詰め替える
+        BeanUtils.copyProperties(motorcycle, motoForm);
+        
         return "moto";
         
     }
-        
+    @PostMapping("/motos/save")
+    public String save(@ModelAttribute MotoForm motoForm){
+        log.info("motoForm:{}", motoForm);
+        //情報更新する
+        Motorcycle motorcycle = new Motorcycle();
+        //入力内容を詰め替える
+        BeanUtils.copyProperties(motoForm, motorcycle);
+        service.save(motorcycle);
+
+        int cnt = service.save(motorcycle);
+        log.info("{}件更新", cnt);
+
+        //一覧に遷移
+        return "redirect:/motos";
+
+    }
+
+
+
+
     /**
      * ブランドリストをモデルにセットする
      * @param model
