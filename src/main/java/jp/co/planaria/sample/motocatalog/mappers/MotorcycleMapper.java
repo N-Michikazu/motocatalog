@@ -28,6 +28,6 @@ public interface MotorcycleMapper {
      * @param motorcycle
      * @return　更新件数
      */
-    @Update("UPDATE m_motorcycle SET moto_name = #{motoName}, seat_height = #{seatHeight} , cylinder = #{cylinder} , cooling = #{cooling} , price = #{price} , `comment` = #{comment} , brand_id = #{brand.brandId} , version = version + 1 , ins_dt = #{insDt} , upd_dt = #{updDt} WHERE    moto_no = #{motoNo} AND version = #{version}")
+    @Update("UPDATE m_motorcycle SET moto_name = #{motoName}, seat_height = #{seatHeight} , cylinder = #{cylinder} , cooling = #{cooling} , price = #{price} , `comment` = #{comment} , brand_id = #{brand.brandId} , version = version + 1 , ins_dt = #{insDt} , upd_dt = #{updDt} WHERE  moto_no = #{motoNo} AND version = #{version}")
     public int update(Motorcycle motorcycle);
 }
