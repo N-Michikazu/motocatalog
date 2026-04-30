@@ -3,6 +3,7 @@ package jp.co.planaria.sample.motocatalog.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
 
 import jp.co.planaria.sample.motocatalog.beans.Brand;
@@ -33,7 +34,22 @@ public class MotosService {
         return brandMapper.selectAll();
     }
 
+        /**
+     * バイク情報を更新する
+     * @param moto バイク情報
+     * @return 更新件数
+     */
     public int save(Motorcycle motorcycle) {
-        return motorcycleMapper.update(motorcycle);
+                int cnt = motorcycleMapper.update(motorcycle);
+        if (cnt == 0){
+            throw new OptimisticLockingFailureException("楽観的排他エラー");
     }
+        return cnt;
+    }
+
+
+
+
+
+
 }
