@@ -1,9 +1,13 @@
 package jp.co.planaria.sample.motocatalog.services;
 
 import java.util.List;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import jp.co.planaria.sample.motocatalog.beans.Brand;
 import jp.co.planaria.sample.motocatalog.beans.Motorcycle;
@@ -13,7 +17,9 @@ import jp.co.planaria.sample.motocatalog.mappers.BrandMappers;
 
 @Service
 public class MotosService {
-    
+    @Autowired
+    MessageSource messageSource;
+
     @Autowired
     MotorcycleMapper motorcycleMapper;
 
@@ -33,7 +39,29 @@ public class MotosService {
         return brandMapper.selectAll();
     }
 
+        /**
+     * バイク情報を更新する
+     * @param moto バイク情報
+     * @return 更新件数
+     */
+    @Transactional
     public int save(Motorcycle motorcycle) {
-        return motorcycleMapper.update(motorcycle);
+        int cnt = motorcycleMapper.update(motorcycle);
+        //更新されなかった場合更新されたか削除されたため楽観的排他エラーとする
+        if (cnt == 0){
+            throw new OptimisticLockingFailureException(
+                messageSource.getMessage("error.OptimisticLockingFailure", 
+                null, Locale.JAPANESE));
+        }
+        //2件以上更新は想定外(SQLの不備の可能性)
+        if (cnt >  1){
+            throw new RuntimeException(
+                messageSource.getMessage
+                ("error.Runtime", 
+                new String[] {"二件以上更新されました。"}, Locale.JAPANESE ));
+        }
+        return cnt;
     }
+
+
 }
