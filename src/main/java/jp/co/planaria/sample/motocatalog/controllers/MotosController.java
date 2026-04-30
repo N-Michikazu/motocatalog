@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.annotation.Generated;
 import jp.co.planaria.sample.motocatalog.beans.Brand;
 import jp.co.planaria.sample.motocatalog.beans.Motorcycle;
 import jp.co.planaria.sample.motocatalog.beans.SearchForm;
@@ -81,7 +82,14 @@ public class MotosController {
         searchForm = new SearchForm();
         return "moto_list";
     }
-
+    @GetMapping("/motos/{motoNo}")
+    public String initUpdate(Model model){
+           //ブランドリストを準備
+        this.setBrands(model);
+        return "moto";
+        
+    }
+        
     /**
      * ブランドリストをモデルにセットする
      * @param model
