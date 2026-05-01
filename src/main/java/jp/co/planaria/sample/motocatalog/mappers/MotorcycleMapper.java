@@ -2,6 +2,7 @@ package jp.co.planaria.sample.motocatalog.mappers;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
@@ -30,6 +31,13 @@ public interface MotorcycleMapper {
      */
     @Update("UPDATE m_motorcycle SET moto_name = #{motoName}, seat_height = #{seatHeight} , cylinder = #{cylinder} , cooling = #{cooling} , price = #{price} , `comment` = #{comment} , brand_id = #{brand.brandId} , version = version + 1 , ins_dt = #{insDt} , upd_dt = #{updDt} WHERE  moto_no = #{motoNo} AND version = #{version}")
     public int update(Motorcycle motorcycle);
+    /**
+     * バイク情報を削除
+     * @param motorcycle
+     * @return　削除件数
+     */
+    @Delete("DELETE FROM m_motorcycle WHERE  moto_no = #{motoNo} AND version = #{version}")
+    public int delete(Motorcycle motorcycle);
 
 
     /**

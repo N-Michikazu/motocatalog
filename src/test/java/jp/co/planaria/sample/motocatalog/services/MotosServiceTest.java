@@ -226,7 +226,21 @@ public class MotosServiceTest{
         
         }
 
+    @DisplayName("バイク情報削除")
+    @Test
+    @Transactional
+    @Rollback
+    void test013(){
+        Motorcycle before = service.getMotos(1);
+        
 
+        service.delete(before);
+
+        Motorcycle after = service.getMotos(1); // 変更後のバイク情報取得
+        assertThat(after).isNull();
+
+        
+        }
 
 
 
