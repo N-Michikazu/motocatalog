@@ -38,6 +38,26 @@ public class MotosService {
     public List<Brand> getBrands() {
         return brandMapper.selectAll();
     }
+    /**
+     * バイク情報保存
+     * @param motorcycle バイク情報
+     * @return　保存件数
+     */
+
+    public int save(Motorcycle motorcycle) {
+        if (motorcycle.getMotoNo() == null) {
+        //登録
+            return this.add(motorcycle);
+        } else {
+        //更新
+            return this.update(motorcycle);
+        }
+    }
+
+
+
+
+
 
         /**
      * バイク情報を更新する
@@ -45,7 +65,7 @@ public class MotosService {
      * @return 更新件数
      */
     @Transactional
-    public int save(Motorcycle motorcycle) {
+    private int update(Motorcycle motorcycle) {
         int cnt = motorcycleMapper.update(motorcycle);
         //更新されなかった場合更新されたか削除されたため楽観的排他エラーとする
         if (cnt == 0){
@@ -63,5 +83,50 @@ public class MotosService {
         return cnt;
     }
 
+    
+    /**
+     * バイク情報を登録する
+     * @param moto バイク情報
+     * @return 登録件数
+     */
+    @Transactional
+    private int add(Motorcycle motorcycle) {
+        //新しいバイク番号を発行
+        Integer motoNo = motorcycleMapper.selectNewMotoNo();
+        motorcycle.setMotoNo(motoNo);
+        //バイク情報を登録
+        int cnt = motorcycleMapper.insert(motorcycle);
+        //登録されなかった場合登録されたか削除されたため楽観的排他エラーとする
+        if (cnt == 0){
+            throw new RuntimeException(
+                messageSource.getMessage("error.Runtime", 
+                new String[] {"登録に失敗しました"}, Locale.JAPANESE ));
+        }
+        return cnt;
+    }
+
+    /**
+     * バイク情報を削除する
+     * @param moto バイク情報
+     * @return 削除件数
+     */
+    @Transactional
+    public int delete(Motorcycle motorcycle) {
+        int cnt = motorcycleMapper.delete(motorcycle);
+        //削除されなかった場合削除されたか削除されたため楽観的排他エラーとする
+        if (cnt == 0){
+            throw new OptimisticLockingFailureException(
+                messageSource.getMessage("error.OptimisticLockingFailure", 
+                null, Locale.JAPANESE));
+        }
+        //2件以上削除は想定外(SQLの不備の可能性)
+        if (cnt >  1){
+            throw new RuntimeException(
+                messageSource.getMessage
+                ("error.Runtime", 
+                new String[] {"二件以上削除されました。"}, Locale.JAPANESE ));
+        }
+        return cnt;
+    }
 
 }

@@ -9,13 +9,13 @@ import lombok.Data;
  * 更新画面の入力内容
  */
 public class MotoForm {
-    private int motoNo;
+    private Integer motoNo;
     private String motoName;
-    private int  seatHeight;
-    private int cylinder;
+    private Integer  seatHeight;
+    private Integer cylinder;
     private String cooling;
-    private int price;
+    private Integer price;
     private String comment;
     private Brand brand;
-    private int version;
+    private Integer version;
 }
