@@ -15,3 +15,6 @@ INSERT INTO m_brand (brand_id, brand_name) VALUES
 ('03', 'Yamaha'),
 ('04', 'Suzuki'),
 ('05', 'moto guzzi');
+
+INSERT INTO m_user(username, password) VALUES ("test","$2a$10$oem7PE0morty9Yf617yST.5t3ELJa4h1gXwBA1Tcl7JLfsUE7uCW.");
+INSERT INTO m_user(username, password) VALUES ("admin","$2a$10$oem7PE0morty9Yf617yST.5t3ELJa4h1gXwBA1Tcl7JLfsUE7uCW.")

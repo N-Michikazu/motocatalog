@@ -14,6 +14,9 @@
     <nav class="navbar navbar-dark bg-dark mb-3">
         <div class="container-fluid">
             <span class="navbar-brand mb-0 h1" th:text="#{site.title}"></span>
+                <form th:action="@{/logout}" method="post">
+            <button class="btn btn-secondary">ログアウト</button>
+        </form>
         </div>
     </nav>
     <div class="container">
