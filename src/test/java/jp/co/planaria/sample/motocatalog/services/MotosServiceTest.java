@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import jp.co.planaria.sample.motocatalog.beans.Brand;
 import jp.co.planaria.sample.motocatalog.beans.Motorcycle;
-import jp.co.planaria.sample.motocatalog.beans.SearchForm;
+import jp.co.planaria.sample.motocatalog.forms.SearchForm;
 
 // 2. classes属性で起動クラスを指定する
 @SpringBootTest
