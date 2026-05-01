@@ -71,8 +71,8 @@
                             <th scope="row" th:text="${motorcycle.motoNo}"></th>
                             <td th:text="${motorcycle.brand.brandName}"></td>
                             <td ><a th:href="@{/motos/} + *{motorcycle.motoNo}" th:text="${motorcycle.motoName}"></a></td>
-                            <td th:text="${motorcycle.cooling} + ${motorcycle.cylinder}"></td>
-                            <td th:text="|¥${#numbers.formatInteger(motorcycle.price, 3, 'COMMA')}" class="text-end"></td>
+                            <td><span th:text="${motorcycle.cooling}"></span><span th:text="${motorcycle.cylinder}"></span></td>
+                            <td th:text="${#numbers.formatInteger(motorcycle.price, 3, 'COMMA')}" class="text-end"></td>
                             <td th:text="${motorcycle.comment}"></td>
                         </tr>
                     </tbody>

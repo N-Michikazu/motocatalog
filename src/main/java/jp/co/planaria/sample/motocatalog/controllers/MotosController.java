@@ -143,9 +143,14 @@ public class MotosController {
      * 
      */
     @PostMapping("/motos/save")
-    public String save(@ModelAttribute MotoForm motoForm, BindingResult result, Model model){
+    public String save(@Validated MotoForm motoForm, BindingResult result, Model model){
+        //ブランドリストを準備
+        this.setBrands(model);
         try{
         log.info("motoForm:{}", motoForm);
+        if (result.hasErrors()){
+            return "moto";
+        }
         //情報更新する
         Motorcycle moto = new Motorcycle();
         //入力内容を詰め替える
@@ -159,8 +164,6 @@ public class MotosController {
         return "redirect:/motos";
 
         } catch (OptimisticLockingFailureException e) {
-            //ブランドリストを準備
-            this.setBrands(model);
             result.addError(new ObjectError("global",e.getMessage()));
             return "moto";
         }
